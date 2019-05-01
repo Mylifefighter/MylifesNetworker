@@ -7,4 +7,9 @@ The type of server set up is a spoke wheel (that is, clients are connected to on
 
 I will assume you can download the repository and add it somewhere in your Unity assets folder. 
 
-There are 4 files (currently). These include the Networker.cs file, which houses the main class for performing all networking, ObjWatcher.cs, which is a monobehaviour that will attempt to sync the parent's transform across the network (and provides basic server authority and client authority). Similar to the objWatcher, the prefab manager class will coordinate the synchronization of the networked objects with the networker object.
+There are 4 files (currently). These include the Networker.cs file, which houses the main class for performing all networking, ObjWatcher.cs, which is a monobehaviour that will attempt to sync the parent's transform across the network (and provides basic server authority and client authority). Similar to the objWatcher, the prefab manager class will coordinate the synchronization of the networked objects with the networker object. The fourth script is NETMSG.cs, which houses all possible message types that can be sent across the network. 
+
+
+
+## Road Map
+Currently I am a full time college student, and so my time is a little strained. I am trying to clean up the code to make it somewhat presentable.
