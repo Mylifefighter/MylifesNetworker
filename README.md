@@ -70,12 +70,14 @@ void Update(){
 #### Messages, sending to and fro
 Sending the server a message is easy. Just call
 `Networker.SendServer(NETMSG, channelID);` - Sends the NETMSG across the network channel channelID
+
 Note you can only call this on the client! The networker will complain if you try to send yourself a message!
 
 To send a client a message, there are three options
-`Networker.SendAllClients(NETMSG[, channelID = 0]);` - Sends the NETMSG across the network to ALL clients.
-`Networker.SendClient(NETMSG, long UUID[, channelID = 0]);` - Sends the user with ID UUID the message in NETMSG.
-`Networker.SendAllClientsExcept(NETMSG, long exceptUUID[, channelID = 0]);` - Same as SendAllClients, except it doesn't send it to the 'except' target. Useful for sending updates from the except user to all other users.
+* `Networker.SendAllClients(NETMSG[, channelID = 0]);` - Sends the NETMSG across the network to ALL clients.
+* `Networker.SendClient(NETMSG, long UUID[, channelID = 0]);` - Sends the user with ID UUID the message in NETMSG.
+* `Networker.SendAllClientsExcept(NETMSG, long exceptUUID[, channelID = 0]);` - Same as SendAllClients, except it doesn't send it to the 'except' target. Useful for sending updates from the except user to all other users.
+
 Note you can only call this on the server! The networker will complain if you even think about doing this otherwise!
 
 #### Objects?!
@@ -110,11 +112,11 @@ The server still technically controls the objects, and as such the server and th
 #### Helpful information/functions
 Other helpful functions to keep the day going great.
 
-`bool = Networker.isActive()` - Returns if the *networker* is alive (aka, hasn't errored out or hasn't been killed externally). 
-`bool = Networker.isConnected()` - Returns if the client has successfully connected to the server and the server has acknowledged the request. Note: The client could be kicked from the server, but when this is true, the server has at least allowed the connection to be made.
- `long = Networker.getUserUUID()` - Returns the clients UUID, if the server calls this function it will return -1.
- `List<long> = Networker.getCurrentPlayers()` - Returns a list of the UUIDs of all currently connected players.
- `Networker.Shutdown()` - Yeah. Shuts down the server/client connection. If called on the client, it disconnects from server (Calling the event OnServerDisconnected). If called from server, it disconnects all clients (and still calls OnServerDisconnected).
+* `bool = Networker.isActive()` - Returns if the *networker* is alive (aka, hasn't errored out or hasn't been killed externally). 
+* `bool = Networker.isConnected()` - Returns if the client has successfully connected to the server and the server has acknowledged the request. Note: The client could be kicked from the server, but when this is true, the server has at least allowed the connection to be made.
+* `long = Networker.getUserUUID()` - Returns the clients UUID, if the server calls this function it will return -1.
+* `List<long> = Networker.getCurrentPlayers()` - Returns a list of the UUIDs of all currently connected players.
+* `Networker.Shutdown()` - Yeah. Shuts down the server/client connection. If called on the client, it disconnects from server (Calling the event OnServerDisconnected). If called from server, it disconnects all clients (and still calls OnServerDisconnected).
 
 Create your own userNetMessages to pass information around. 
 
